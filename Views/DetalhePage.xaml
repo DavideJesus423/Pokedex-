@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pokedex.Views.DetalhePage"
+             Title="Detalhe">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+
+            <Image x:Name="imgPokemon" HeightRequest="200" Aspect="AspectFit" />
+
+            <Label x:Name="lblNome" FontSize="26" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Label x:Name="lblTipo" HorizontalOptions="Center" />
+
+            <Label Text="Poderes" FontAttributes="Bold" Margin="0,12,0,0" />
+            <VerticalStackLayout x:Name="listaPoderes" Spacing="4" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12" Margin="0,24,0,0">
+                <Button Text="Editar" Clicked="btnEditar_Clicked" />
+                <Button Grid.Column="1" Text="Excluir" BackgroundColor="Gray" Clicked="btnExcluir_Clicked" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pokedex.Views.CadastroPage"
+             Title="Novo Pokémon">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+
+            <Image x:Name="imgPokemon" HeightRequest="160" Aspect="AspectFit" />
+            <Button Text="Escolher imagem" Clicked="btnImagem_Clicked" />
+
+            <Entry x:Name="txtNome" Placeholder="Nome do Pokémon" />
+
+            <Entry x:Name="txtTipo" Placeholder="Tipo (ex.: Fogo, Água)" />
+
+            <Label Text="Poderes" FontAttributes="Bold" />
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                <Entry x:Name="txtPoder" Placeholder="Nome do poder" />
+                <Button Grid.Column="1" Text="Adicionar" Clicked="btnAdicionarPoder_Clicked" />
+            </Grid>
+
+            <VerticalStackLayout x:Name="listaPoderes" Spacing="4" />
+
+            <Button Text="Salvar" Margin="0,16,0,0" Clicked="btnSalvar_Clicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

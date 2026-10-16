@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pokedex.Views.ListaPage"
+             Title="Pokédex">
+
+    <Grid RowDefinitions="Auto,*" Padding="12" RowSpacing="8">
+
+        <SearchBar x:Name="barraBusca"
+                   Placeholder="Buscar por nome"
+                   TextChanged="barraBusca_TextChanged" />
+
+        <CollectionView x:Name="listaPokemons"
+                        Grid.Row="1"
+                        SelectionMode="Single"
+                        SelectionChanged="listaPokemons_SelectionChanged"
+                        EmptyView="Nenhum Pokémon cadastrado.">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="72,*" ColumnSpacing="12" Padding="8">
+                        <Image Source="{Binding Imagem}"
+                               WidthRequest="72" HeightRequest="72"
+                               Aspect="AspectFit" />
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="{Binding Nome}" FontSize="18" FontAttributes="Bold" />
+                            <Label Text="{Binding Tipo}" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button x:Name="btnNovo"
+                Grid.Row="1"
+                Text="+" FontSize="28"
+                WidthRequest="60" HeightRequest="60" CornerRadius="30"
+                Padding="0"
+                HorizontalOptions="End" VerticalOptions="End"
+                Margin="0,0,8,8"
+                Clicked="btnNovo_Clicked" />
+    </Grid>
+</ContentPage>
